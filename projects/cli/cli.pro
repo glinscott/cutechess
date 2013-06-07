@@ -22,6 +22,11 @@ mac {
     CONFIG -= app_bundle
 }
 
+unix:!mac {
+    QMAKE_LFLAGS += -Wl,--rpath=\\\$\$ORIGIN
+    QMAKE_RPATH=
+}
+
 QT = core
 
 # Code
